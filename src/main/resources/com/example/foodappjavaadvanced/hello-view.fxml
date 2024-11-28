@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.foodappjavaadvanced.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.foodappjavaadvanced.HelloController"
+      spacing="10" alignment="CENTER">
+    <!-- Search Section -->
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="searchField" promptText="Search meals..." style="-fx-font-size: 14; -fx-pref-width: 200;"/>
+        <Button text="Search" onAction="#handleSearch" style="-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-padding: 5 10;"/>
+    </HBox>
 
-    <Label fx:id="welcomeText" text="Welcome to the Food App!" />
-    <Button text="Hello!" />
+    <!-- Quick Search Buttons -->
+    <FlowPane hgap="10" vgap="10" alignment="CENTER" style="-fx-padding: 10;">
+        <Button text="Chicken" onAction="#handleQuickSearch" style="-fx-background-color: #f0f0f0; -fx-text-fill: black; -fx-border-color: #ccc;"/>
+        <Button text="Burger" onAction="#handleQuickSearch" style="-fx-background-color: #f0f0f0; -fx-text-fill: black; -fx-border-color: #ccc;"/>
+        <Button text="Pizza" onAction="#handleQuickSearch" style="-fx-background-color: #f0f0f0; -fx-text-fill: black; -fx-border-color: #ccc;"/>
+        <Button text="Pasta" onAction="#handleQuickSearch" style="-fx-background-color: #f0f0f0; -fx-text-fill: black; -fx-border-color: #ccc;"/>
+    </FlowPane>
 
-    <!-- New ListView for displaying meals -->
-    <ListView fx:id="mealListView" prefHeight="200.0" prefWidth="300.0" />
+    <!-- Grid Title -->
+    <Label fx:id="gridTitle" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+    <!-- ScrollPane for Meal Cards -->
+    <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+        <GridPane fx:id="mealGrid" alignment="CENTER" hgap="20" vgap="20" style="-fx-padding: 20;">
+            <!-- Meal cards will be added dynamically here -->
+        </GridPane>
+    </ScrollPane>
 </VBox>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.foodappjavaadvanced.MealDetailsController" style="-fx-padding: 20;">
+    <VBox xmlns="http://javafx.com/javafx" spacing="10">
+        <ImageView fx:id="mealImageView" fitWidth="300" fitHeight="300" preserveRatio="true"/>
+        <Label fx:id="instructionsLabel" style="-fx-font-size: 14; -fx-text-fill: #333333; -fx-padding: 10; -fx-text-alignment: LEFT; -fx-line-spacing: 6;"/>
+        <Label fx:id="ingredientsLabel" style="-fx-font-size: 14; -fx-text-fill: #333333; -fx-padding: 10; -fx-text-alignment: LEFT; -fx-line-spacing: 6;"/>
+    </VBox>
+</ScrollPane>
